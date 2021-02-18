@@ -3,6 +3,7 @@ VERSION:2.0
 PRODID:namedays.github.io/{{ page.name }}
 URL:https://namedays.github.io/{{ page.name }}
 NAME:{{ page.title }}
+X-WR-CALNAME:{{ page.title }}
 {%- for range in page.ranges %}
 BEGIN:VEVENT
 UID:namedays.github.io/{{ page.name }}/
