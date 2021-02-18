@@ -1,0 +1,14 @@
+---
+title: Meniny na Slovensku
+ranges:
+  - start: 2000-04-24
+    names:
+      - Juraj
+      - Džuroe
+      - Adalbert
+      - Roger
+      - Adalberta
+      - Vojtecha
+      - Vojteška
+---
+{% include ics_template %}
