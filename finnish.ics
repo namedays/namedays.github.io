@@ -1,0 +1,9 @@
+---
+title: Nimipäiväkalenteri
+ranges:
+  - start: 2000-11-28
+    names:
+      - Heini
+      - Kaisla
+---
+{% include ics_template %}

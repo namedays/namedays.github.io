@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:namedays.github.io/{{ page.name }}
+URL:https://namedays.github.io/{{ page.name }}
+NAME:{{ page.title }}
+{%- for range in page.ranges %}
+BEGIN:VEVENT
+UID:namedays.github.io/{{ page.name }}/
+  {{- range.start | date: "%Y%m%d" }}
+  {%- if range.end -%}
+    /
+    {{- range.end | date: "%Y%m%d" }}
+  {%- endif %}
+DTSTAMP:{{ range.start | date: "%Y%m%d" }}T000000Z
+DTSTART;VALUE=DATE:{{ range.start | date: "%Y%m%d" }}
+SUMMARY:{{ range.names | sort | join: ", " }}
+TRANSP:TRANSPARENT
+CLASS:PUBLIC
+CATEGORIES:ANNIVERSARY,PERSONAL,SPECIAL OCCASION
+RRULE:FREQ=YEARLY
+{%- if range.end -%}
+;UNTIL={{ range.end | date: "%Y%m%d" }}
+{%- endif %}
+END:VEVENT
+{%- endfor %}
+END:VCALENDAR
